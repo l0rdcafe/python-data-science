@@ -1,4 +1,4 @@
-from scratch.linear_algebra import sum_of_squares
+from . import vec
 from typing import List
 from collections import Counter
 
@@ -36,7 +36,7 @@ def variance(xs: List[float]) -> float:
     assert len(xs) >= 2, 'variance requires at least two elements'
     n = len(xs)
     deviations = de_mean(xs)
-    return sum_of_squares(deviations) / (n - 1)
+    return vec.sum_of_squares(deviations) / (n - 1)
 
 def standard_deviation(xs: List[float]) -> float:
     return math.sqrt(variance(xs))
